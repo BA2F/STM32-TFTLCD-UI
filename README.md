@@ -47,5 +47,55 @@
 - Ch'en Chvn-yeh（需求分析）
 - Chang Chen-hung（功能测试）
 
+---
+
+# STM32-BedsideClock
+
+#### Introduction
+An intelligent bedside clock developed based on the STM32F103ZET6 (Zhengdian Atomic Elite Board V2), featuring core functions including:
+- 🕒 **High-precision time display**: Year/Month/Day/Hour/Minute/Second display
+- 🌓 **Auto dark/light mode**: Intelligently switches display style based on ambient light
+- 🔋 **Power-off time retention**: Custom RTC library solves traditional HAL library's power loss issue
+- ⚡ **Efficient architecture design**: Modular code + time-slice polling scheduling
+
+![System Demo](picture.png)
+
+#### Installation Guide
+1. **Hardware Preparation**
+   - Zhengdian Atomic Elite Board V2
+   - 2.8-inch TFT LCD Display
+   - CR1220 Coin Cell Battery (Backup Power)
+
+2. **Development Environment**
+   ```bash
+   IDE: Keil MDK v5.38
+   STM32CubeMX: v6.14.0
+   STM32F1 HAL: v1.8.6
+   ```
+
+3. **Program Burning**
+   - Connect development board using ST-Link
+   - Compile project and burn hex file
+   - Install backup battery to ensure power-off timekeeping
+
+#### Usage Instructions
+| Button | Function |
+|--------|----------|
+| KEY0 | Enter/exit setup mode / Option switch |
+| KEY1 | Value increase |
+| KEY_UP | Value decrease |
+
+**Operation Flow**:
+1. Automatically enters time setup on first boot
+2. Set current time using buttons
+3. System automatically enters display mode
+4. Automatically switches between dark/light modes based on ambient light changes
+
+#### Contribution
+**Contributors**:
+- T'an Hao-tsun (System Architecture Design)
+- Ch'en Chvn-yeh (Requirement Analysis)
+- Chang Chen-hung (Functional Testing)
+
 
 
