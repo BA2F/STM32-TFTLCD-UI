@@ -1,4 +1,4 @@
-# STM32-BedsideClock
+# STM32-BedsideClock 基于STM32的显示自适应万年历
 
 #### 介绍
 基于STM32F103ZET6（正点原子精英板 V2）开发的智能床头钟，核心功能包括：
