@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "fsmc.h": "c",
+        "lcd.h": "c",
+        "ui_main.h": "c",
+        "adc.h": "c",
+        "dma.h": "c"
+    }
+}

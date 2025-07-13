@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "lcd.h": "c",
+        "main.h": "c",
+        "font.h": "c",
+        "fsmc.h": "c",
+        "key.h": "c",
+        "atomic": "c",
+        "compare": "c",
+        "cstddef": "c",
+        "limits": "c",
+        "memory": "c",
+        "type_traits": "c",
+        "vector": "c",
+        "xmemory": "c",
+        "xstring": "c",
+        "xutility": "c",
+        "tim.h": "c",
+        "cstring": "c",
+        "task_main.h": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "string": "c",
+        "calendar.h": "c"
+    }
+}
