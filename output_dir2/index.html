@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>BA2F/STM32-TFTLCD-UI</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="从 DeepWiki 转换的文档站点">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify@4/lib/themes/vue.css">
+  <style>
+    .sidebar {
+      padding-top: 6px;
+    }
+    .markdown-section {
+      max-width: 800px;
+    }
+    .app-name-link {
+      color: var(--theme-color, #42b983) !important;
+    }
+    /* 语言切换按钮样式 */
+    .language-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: var(--theme-color, #42b983);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .language-switch:hover {
+      background: var(--theme-color-dark, #369870);
+      color: white;
+    }
+    .language-menu {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      z-index: 1000;
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: none;
+      min-width: 120px;
+    }
+    .language-menu a {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
+    .language-menu a:last-child {
+      border-bottom: none;
+    }
+    .language-menu a:hover {
+      background: #f8f9fa;
+    }
+    .language-menu.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">正在加载...</div>
+  
+  <!-- 语言切换菜单 -->
+  <button class="language-switch" onclick="toggleLanguageMenu()">
+    🌐 语言 / Language
+  </button>
+  <div class="language-menu" id="languageMenu">
+    <a href="#/zh-cn/">🇨🇳 中文</a>
+    <a href="#/en/">🇺🇸 English</a>
+  </div>
+
+  <script>
+    // 语言切换功能
+    function toggleLanguageMenu() {
+      const menu = document.getElementById('languageMenu');
+      menu.classList.toggle('show');
+    }
+    
+    // 点击页面其他地方关闭菜单
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('languageMenu');
+      const button = document.querySelector('.language-switch');
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.remove('show');
+      }
+    });
+
+    window.$docsify = {
+      name: 'BA2F/STM32-TFTLCD-UI',
+      repo: '',
+      homepage: 'zh-cn/README.md',
+      loadSidebar: '_sidebar.md',
+      autoHeader: true,
+      subMaxLevel: 3,
+      maxLevel: 4,
+      alias: {
+        '.*zh-cn.*/_sidebar.md': '/zh-cn/_sidebar.md',
+        '.*en.*/_sidebar.md': '/en/_sidebar.md',
+        '/zh-cn/README.md': '/zh-cn/README.md',
+        '/en/README.md': '/en/README.md',
+        '/zh-cn/pages/(.*)': '/zh-cn/pages/$1',
+        '/en/pages/(.*)': '/en/pages/$1'
+      },
+      fallbackLanguages: ['zh-cn'],
+      nameLink: {
+        '/zh-cn/': '#/zh-cn/',
+        '/en/': '#/en/',
+        '/': '#/'
+      },
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: {
+          '/zh-cn/': '搜索文档...',
+          '/en/': 'Search...',
+          '/': '搜索文档...'
+        },
+        noData: {
+          '/zh-cn/': '没有找到结果',
+          '/en/': 'No results found',
+          '/': '没有找到结果'
+        },
+        depth: 6
+      },
+      copyCode: {
+        buttonText: {
+          '/zh-cn/': '复制代码',
+          '/en/': 'Copy Code',
+          '/': '复制代码'
+        },
+        errorText: {
+          '/zh-cn/': '复制失败',
+          '/en/': 'Copy failed',
+          '/': '复制失败'
+        },
+        successText: {
+          '/zh-cn/': '已复制到剪贴板',
+          '/en/': 'Copied to clipboard',
+          '/': '已复制到剪贴板'
+        }
+      },
+      pagination: {
+        previousText: {
+          '/zh-cn/': '上一页',
+          '/en/': 'Previous',
+          '/': '上一页'
+        },
+        nextText: {
+          '/zh-cn/': '下一页',
+          '/en/': 'Next',
+          '/': '下一页'
+        },
+        crossChapter: true,
+        crossChapterText: true
+      },
+      mermaid: {
+        theme: 'default'
+      }
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//unpkg.com/docsify@4"></script>
+  <!-- Mermaid -->
+  <script src="//unpkg.com/mermaid@9/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      theme: 'default',
+      startOnLoad: false
+    });
+  </script>
+  <script src="//unpkg.com/docsify-mermaid@1/dist/docsify-mermaid.js"></script>
+  <!-- 插件 -->
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code@2"></script>
+  <script src="//unpkg.com/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+</body>
+</html>
