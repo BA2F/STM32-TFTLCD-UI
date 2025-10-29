@@ -1,5 +1,7 @@
 # 基于STM32的显示自适应万年历（床头钟）
 
+[Wiki](output_dir2/zh-cn/pages/BA2F/STM32-TFTLCD-UI/1-home.md)
+
 #### 介绍
 基于STM32F103ZET6（正点原子精英板 V2）开发的智能床头钟，核心功能包括：
 - 🕒 **高精度时间显示**：年/月/日/时/分/秒显示
@@ -96,6 +98,7 @@ An intelligent bedside clock developed based on the STM32F103ZET6 (Zhengdian Ato
 - T'an Hao-tsun (System Architecture Design)
 - Ch'en Chvn-yeh (Requirement Analysis)
 - Chang Chen-hung (Functional Testing)
+
 
 
 
